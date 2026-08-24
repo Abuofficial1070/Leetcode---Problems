@@ -1,14 +1,10 @@
 class Solution:
     def wiggleSort(self, nums: List[int]) -> None:
-
         res = nums[:]
         res.sort()
-
         n = len(nums)
-
         left = (n - 1) // 2
         right = n - 1
-
         for i in range(n):
             if i % 2 == 0:
                 nums[i] = res[left]
