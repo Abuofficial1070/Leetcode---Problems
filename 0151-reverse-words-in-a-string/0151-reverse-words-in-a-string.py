@@ -1,18 +1,18 @@
 class Solution:
     def reverseWords(self, s):
         words = []
-        word = []
+        word = ""
 
         for ch in s:
             if ch != " ":
-                word.append(ch)
+                word += ch
             else:
-                if word:
-                    words.append("".join(word))
-                    word = []
+                if word != "":
+                    words.append(word)
+                    word = ""
 
-        if word:
-            words.append("".join(word))
+        if word != "":
+            words.append(word)
 
         words.reverse()
 
