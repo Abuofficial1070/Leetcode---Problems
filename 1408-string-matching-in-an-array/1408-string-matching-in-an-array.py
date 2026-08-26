@@ -7,4 +7,3 @@ class Solution:
                     result.append(word)
                     break
         return result
-        
