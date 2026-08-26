@@ -1,13 +1,22 @@
 class Solution:
     def subsets(self, nums):
-        result = [[]]
+        result = []
 
-        for num in nums:
-            new = []
+        def backtrack(i, current):
+            if i == len(nums):
+                result.append(current[:])
+                return
 
-            for subset in result:
-                new.append(subset + [num])
+            # Don't take nums[i]
+            backtrack(i + 1, current)
 
-            result += new
+            # Take nums[i]
+            current.append(nums[i])
+            backtrack(i + 1, current)
+
+            # Remove it
+            current.pop()
+
+        backtrack(0, [])
 
         return result
