@@ -7,14 +7,11 @@ class Solution:
                 result.append(current[:])
                 return
 
-            # Don't take nums[i]
             backtrack(i + 1, current)
 
-            # Take nums[i]
             current.append(nums[i])
             backtrack(i + 1, current)
 
-            # Remove it
             current.pop()
 
         backtrack(0, [])
